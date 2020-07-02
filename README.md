@@ -21,3 +21,7 @@ pip install -r requirements.txt
 
 python manage.py runserver
 ```
+
+Не забудь добавить домен приложения в ALLOWED_HOSTS.
+
+Удачи! 😊
