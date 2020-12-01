@@ -16,7 +16,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = env('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = bool(env('DEBUG'))
+DEBUG = env('DEBUG') == 'True'
 
 ALLOWED_HOSTS = [
     env('DOMAIN_NAME')
@@ -72,7 +72,7 @@ WSGI_APPLICATION = 'core.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
-if bool(env('PRODUCTION')):
+if env('PRODUCTION') == 'True':
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.postgresql_psycopg2',
